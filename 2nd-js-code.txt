@@ -1,0 +1,69 @@
+Oddish or Evenish:
+
+function oddeven(number){
+    console.log(number);
+    let y=number;
+    let sum=0;
+    while(y!=0){
+        sum+=y%10;
+        y=y/10;
+    }
+    if(sum%2==0)
+        console.log("Evenish\n");
+    else
+        console.log("Oddish\n");
+}
+
+// oddeven(23);
+// oddeven(555);
+// oddeven(123);
+
+-----------------------------------------------------------
+
+Binary search:
+
+let binsearch = function (arr, x, start, end) {
+	
+	// base condition
+	if (start > end)
+     		return false;
+
+	let m=Math.floor((start + end)/2);
+
+	if (arr[m]===x) 
+        	return true;
+
+	if(arr[m] > x)
+		return binsearch(arr, x, start, m-1);
+	else
+		return binsearch(arr, x, m+1, end);
+}
+
+
+let arr = [1, 3, 5, 7, 8, 9];
+let x = 5;
+console.log(arr);
+console.log(`search element:${x}`);
+if (binsearch(arr, x, 0, arr.length-1))
+	console.log("Element found!\n");
+else console.log("Element not found!\n");
+
+x = 6;
+console.log(`search element:${x}`);
+if (binsearch(arr, x, 0, arr.length-1))
+	console.log("Element found!");
+else console.log("Element not found!");	
+
+-------------------------------------------------------------------
+concat n input variable arrays:
+
+function concat(...arr){
+    let x=arr.flat();
+    console.log(x);
+    console.log('\n');
+    
+}
+
+// concat([1, 2, 3], [4, 5], [6, 7]);
+// concat([1], [2], [3], [4], [5], [6], [7]);
+// concat([1, 2], [3, 4]);
